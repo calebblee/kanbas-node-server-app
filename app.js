@@ -8,12 +8,12 @@ import mongoose from "mongoose";
 import session from "express-session";
 import "dotenv/config";
 
-const CONNECTION_STRING = "mongodb+srv://caleblee12694:9261492614popo@cluster0.a8zioqh.mongodb.net/?retryWrites=true&w=majority" || 'mongodb://127.0.0.1:27017/kanbas'
+const CONNECTION_STRING = "mongodb+srv://caleblee12694:9261492614popo@cluster0.a8zioqh.mongodb.net/?retryWrites=true&w=majority" || 'mongodb://127.0.0.1:27017/kanbas';
 mongoose.connect(CONNECTION_STRING);
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: process.env.FRONTEND_URL
+    origin: 'https://a6--funny-vacherin-731ed5.netlify.app/'
 }
 ));
 const sessionOptions = {
@@ -30,7 +30,6 @@ if (process.env.NODE_ENV !== "development") {
 }
 app.use(session(sessionOptions));
 
-app.get('/', (req, res) => {res.send('Welcome to Full Stack Development!')})
 app.use(express.json());
 UserRoutes(app);
 CourseRoutes(app);
