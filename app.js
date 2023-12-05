@@ -30,7 +30,7 @@ if (process.env.NODE_ENV !== "development") {
 }
 app.use(session(sessionOptions));
 
-
+app.get('/', (req, res) => {res.send('Welcome to Full Stack Development!')})
 app.use(express.json());
 UserRoutes(app);
 CourseRoutes(app);
