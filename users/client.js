@@ -1,6 +1,9 @@
 import axios from "axios";
 export const BASE_API = "https://kanbas-node-server-app-mnvx.onrender.com";
 export const USERS_API = `${BASE_API}/api/users`;
+const request = axios.create({
+    withCredentials: true,
+  });  
 export const signin = async (credentials) => {
     const response = await request.post(`${USERS_API}/signin`, credentials);
     return response.data;
@@ -39,6 +42,3 @@ export const signout = async () => {
     const response = await request.post(`${USERS_API}/signout`);
     return response.data;
 };
-const request = axios.create({
-    withCredentials: true,
-});
