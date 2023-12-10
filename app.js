@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 import session from "express-session";
 import "dotenv/config";
 
-const CONNECTION_STRING = "mongodb+srv://caleblee12694:9261492614popo@cluster0.a8zioqh.mongodb.net/?retryWrites=true&w=majority" || 'mongodb://127.0.0.1:27017/kanbas';
+const CONNECTION_STRING = "mongodb+srv://caleblee12694:9261492614popo@cluster0.a8zioqh.mongodb.net/kanbas?retryWrites=true&w=majority" || 'mongodb://127.0.0.1:27017/kanbas';
 mongoose.connect(CONNECTION_STRING);
 const app = express();
 app.use(cors({
